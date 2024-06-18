@@ -1,21 +1,33 @@
 import { quizzes } from "../../data/data.json";
-import Container from "../Container";
+import CategoryContainer from "../CategoryContainer";
 
-export default function homeScreen() {
-  const categories = quizzes.map((el, i) => {
-    return <Container key={i} icon={el.icon} title={el.title} />;
-  });
-
+const categories = quizzes.map((el, i) => {
   return (
-    <div className='h-full p-6 pt-8'>
-      <div className='flex flex-col gap-4 mb-10'>
-        <div className='flex flex-col gap-2'>
-          <p className='text-[2.5rem] font-light leading-[100%]'>Welcome to the</p>
-          <p className='text-[2.5rem] font-medium leading-[100%]'>Frontend Quiz!</p>
+    <CategoryContainer
+      key={i}
+      icon={el.icon}
+      title={el.title}
+      color={el.color}
+      data={el.questions}
+    />
+  );
+});
+
+export default function Homescreen() {
+  return (
+    <>
+      <div className='p-6 pt-8 md:p-0 md:pt-[3.9375rem] z-10'>
+        <div className='flex flex-col gap-4 mb-10 md:mb-16'>
+          <div className='flex flex-col gap-2'>
+            <p className='text-[2.5rem] font-light headingL leading-[100%]'>Welcome to the</p>
+            <p className='text-[2.5rem] font-medium headingLBold leading-[100%]'>Frontend Quiz!</p>
+          </div>
+          <p className='text-[0.875rem] italic leading-[150%] bodyS'>
+            Pick a subject to get started.
+          </p>
         </div>
-        <p className='text-[0.875rem] italic leading-[150%]'>Pick a subject to get started.</p>
+        <div className='flex flex-col gap-3'>{categories}</div>
       </div>
-      <div className='flex flex-col gap-3'>{categories}</div>
-    </div>
+    </>
   );
 }

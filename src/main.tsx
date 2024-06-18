@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import App from "./App.tsx";
-import quizHTML from "./components/quizes/quizHTML/index.tsx";
+import Homescreen from "./components/Homescreen/index.tsx";
+import ProtectedQuiz from "./components/quiz/protected.tsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <div>
-        <App />
-      </div>
-      <Routes>
-        <Route path='/HTML' Component={quizHTML}></Route>
-      </Routes>
-    </BrowserRouter>
+    <HashRouter>
+      <App>
+        <Routes>
+          <Route path='/' Component={Homescreen}></Route>
+          <Route path='/quiz/*' Component={ProtectedQuiz}></Route>
+        </Routes>
+      </App>
+    </HashRouter>
   </React.StrictMode>
 );

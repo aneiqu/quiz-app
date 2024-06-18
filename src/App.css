@@ -2,6 +2,18 @@
   font-family: "Rubik";
   src: url(./assets/fonts/Rubik-VariableFont_wght.ttf) format("truetype");
 }
+@font-face {
+  font-family: "RubikMedium";
+  src: url(./assets/fonts/static/Rubik-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "RubikRegular";
+  src: url(./assets/fonts/static/Rubik-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "RubikItalic";
+  src: url(./assets/fonts/static/Rubik-Italic.ttf) format("truetype");
+}
 
 body {
   font-family: "Rubik", sans-serif;
@@ -9,6 +21,34 @@ body {
 .dark {
 }
 @media screen and (min-width: 768px) {
-  body {
+  .headingL {
+    font-family: "RubikRegular", sans-serif;
+    font-size: 4rem !important;
+    line-height: 100% !important;
+  }
+  .headingLBold {
+    font-family: "RubikMedium", sans-serif;
+    font-size: 4rem !important;
+    line-height: 100% !important;
+  }
+  .headingM {
+    font-family: "RubikMedium", sans-serif;
+    font-size: 2.25rem !important;
+    line-height: 100% !important;
+  }
+  .headingS {
+    font-family: "RubikMedium", sans-serif;
+    font-size: 1.75rem !important;
+    line-height: 100% !important;
+  }
+  .bodyM {
+    font-family: "RubikRegular", sans-serif;
+    font-size: 1.25rem !important;
+    line-height: 150% !important;
+  }
+  .bodyS {
+    font-family: "RubikItalic", sans-serif;
+    font-size: 1.25rem !important;
+    line-height: 150% !important;
   }
 }
