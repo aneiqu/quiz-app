@@ -12,9 +12,11 @@ export default function Navbar({ category, color, icon }: setThemeType) {
       <div className={`flex flex-row items-center`}>
         <div
           style={{ backgroundColor: color }}
-          className='w-10 h-10 md:w-14 md:h-14 rounded-md text-lg leading-[100%] flex items-center justify-center mr-4 md:mr-6'
+          className={`w-10 h-10 md:w-14 md:h-14 rounded-md text-lg leading-[100%] flex items-center justify-center mr-4 md:mr-6 ${
+            icon.length > 0 ? "" : "hidden"
+          }`}
         >
-          <img className='w-7 md:w-9' src={icon} alt='' />
+          <img className='w-7 md:w-9' src={icon} />
         </div>
         <p className='headingS'>{category}</p>
       </div>
