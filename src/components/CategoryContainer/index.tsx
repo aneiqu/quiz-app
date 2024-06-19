@@ -12,11 +12,11 @@ export default function CategoryContainer({ icon, title, color, data }: propsTyp
     <Link
       to={`/quiz/${title.toLocaleLowerCase()}`}
       state={{ icon, title, color, data }}
-      className='h-16 md:h-20 flex items-center bg-white dark:bg-navy rounded-xl p-3'
+      className='h-16 md:h-20 lg:h-24 flex items-center bg-white dark:bg-navy rounded-xl p-3 lg:p-5'
     >
       <div
         style={{ backgroundColor: color }}
-        className={`w-10 h-10 md:w-14 md:h-14 rounded-md flex items-center justify-center mr-6`}
+        className={`w-10 h-10 md:w-14 md:h-14 rounded-md flex items-center justify-center mr-6 lg:mr-8`}
       >
         <img className='w-7 md:w-9' src={icon} alt='' />
       </div>

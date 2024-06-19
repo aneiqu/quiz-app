@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import App from "./App.tsx";
 import Homescreen from "./components/Homescreen/index.tsx";
+import ProtectedResult from "./components/Result/protected.tsx";
 import ProtectedQuiz from "./components/quiz/protected.tsx";
 import "./index.css";
 
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route path='/' Component={Homescreen}></Route>
           <Route path='/quiz/*' Component={ProtectedQuiz}></Route>
+          <Route path='/result/*' Component={ProtectedResult}></Route>
         </Routes>
       </App>
     </HashRouter>
