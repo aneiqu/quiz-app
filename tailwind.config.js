@@ -11,6 +11,10 @@ export default {
       backgroundImage: {
         mobileLight: 'url("/images/pattern-background-mobile-light.svg")',
         mobileDark: 'url("/images/pattern-background-mobile-dark.svg")',
+        tabletLight: 'url("/images/pattern-background-tablet-light.svg")',
+        tabletDark: 'url("/images/pattern-background-tablet-dark.svg")',
+        desktopLight: 'url("/images/pattern-background-desktop-light.svg")',
+        desktopDark: 'url("/images/pattern-background-desktop-dark.svg")',
       },
       colors: {
         ...colors,

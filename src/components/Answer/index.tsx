@@ -37,7 +37,9 @@ export default function Answer({
       } `}
     >
       <div
-        className={`flex items-center justify-center w-10 h-10 md:w-14 md:h-14 font-medium text-[1.125rem] leading-[100%] bg-lightGrey text-greyNavy rounded-md md:rounded-xl md:group-hover:bg-[#F6E7FF] md:group-hover:text-purple transition-all duration-150 headingS ${
+        className={`flex items-center justify-center w-10 h-10 md:w-14 md:h-14 font-medium text-[1.125rem] leading-[100%] bg-lightGrey text-greyNavy rounded-md md:rounded-xl ${
+          submited ? "" : "md:group-hover:bg-[#F6E7FF] md:group-hover:text-purple"
+        } transition-all duration-150 headingS ${
           selected === index ? "bg-purple text-white" : ""
         } ${correct === index && correct === selected ? "bg-green text-white" : ""} ${
           wrong === index ? "bg-red text-white" : ""

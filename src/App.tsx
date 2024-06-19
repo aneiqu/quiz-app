@@ -27,7 +27,7 @@ function App({ children }: childrenProp) {
 
   return (
     <div
-      className={`w-screen h-screen transition-all duration-200 bg-mobileLight bg-lightGrey dark:bg-darkNavy dark:bg-mobileDark text-darkNavy dark:text-white bg-no-repeat bg-cover md:p-16 md:pt-10 lg:p-[8.75rem] lg:pt-[5.1875rem] ${theme}`}
+      className={`w-screen h-screen transition-all duration-200 bg-mobileLight bg-lightGrey dark:bg-darkNavy dark:bg-mobileDark md:bg-tabletLight md:dark:bg-tabletDark lg:bg-desktopLight lg:dark:bg-desktopDark text-darkNavy dark:text-white bg-no-repeat bg-cover md:p-16 md:pt-10 lg:p-[8.75rem] lg:pt-[5.1875rem] ${theme}`}
     >
       <Navbar
         category={location.state?.title || ""}
