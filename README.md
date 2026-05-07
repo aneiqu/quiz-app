@@ -4,17 +4,11 @@ This is a solution to the [Frontend quiz app challenge on Frontend Mentor](https
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+- [The challenge](#the-challenge)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [Built with](#built-with)
 - [Author](#author)
-- [ToDo](#ToDo)
 
 ### The challenge
 
@@ -34,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./Screenshot.jpg)
 
 ### Links
 
@@ -44,14 +38,10 @@ Users should be able to:
 ### Built with
 
 - [React](https://reactjs.org/) - JS library
-- [Vitejs](https://vitejs.dev/) - React framework
+- [Vite](https://vitejs.dev/) - Build tool
 - [TailwindCSS](https://tailwindcss.com/) - For styles
-- [ReactRouter](https://reactrouter.com/en/main) - Routing
+- [React Router](https://reactrouter.com/en/main) - Routing
 
 ## Author
 
 - Frontend Mentor - [@aneiqu](https://www.frontendmentor.io/profile/aneiqu)
-
-## ToDo
-
-- Tests

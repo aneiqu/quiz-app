@@ -1,5 +1,3 @@
-import colors from "tailwindcss/colors";
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -17,7 +15,6 @@ export default {
         desktopDark: 'url("/images/pattern-background-desktop-dark.svg")',
       },
       colors: {
-        ...colors,
         purple: "#A729F5",
         navy: "#3B4D66",
         darkNavy: "#313E51",

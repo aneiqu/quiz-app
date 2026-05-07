@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import moonIconDark from "/images/icon-moon-dark.svg";
-import moonIconLight from "/images/icon-moon-light.svg";
-import sunIconDark from "/images/icon-sun-dark.svg";
-import sunIconLight from "/images/icon-sun-light.svg";
+
+const moonIconDark = "/images/icon-moon-dark.svg";
+const moonIconLight = "/images/icon-moon-light.svg";
+const sunIconDark = "/images/icon-sun-dark.svg";
+const sunIconLight = "/images/icon-sun-light.svg";
 
 export default function ThemeSwitch() {
   const [theme, setTheme] = useState<string>(localStorage.getItem("theme") || "light");
@@ -20,12 +21,12 @@ export default function ThemeSwitch() {
       <img
         className='w-[0.875rem] md:w-[1.3125rem]'
         src={theme === "light" ? sunIconDark : sunIconLight}
-        alt=''
+        alt='Sun icon'
       />
-      <div
-        className={`flex items-center bg-purple w-8 md:w-12 h-full p-1 rounded-full  relative ${
-          theme === "dark" ? "" : ""
-        }`}
+      <button
+        type='button'
+        aria-label='Toggle theme'
+        className='flex items-center bg-purple w-8 md:w-12 h-full p-1 rounded-full relative'
         onClick={toggleTheme}
       >
         <div
@@ -33,11 +34,11 @@ export default function ThemeSwitch() {
             theme === "dark" ? "translate-x-[100%]" : ""
           }`}
         ></div>
-      </div>
+      </button>
       <img
         className='w-3 md:w-[1.125rem]'
         src={theme === "light" ? moonIconDark : moonIconLight}
-        alt=''
+        alt='Moon icon'
       />
     </div>
   );

@@ -10,7 +10,7 @@ type propsType = {
 export default function CategoryContainer({ icon, title, color, data }: propsType) {
   return (
     <Link
-      to={`/quiz/${title.toLocaleLowerCase()}`}
+      to={`/quiz/${title.toLowerCase()}`}
       state={{ icon, title, color, data }}
       className='h-16 md:h-20 lg:h-24 flex items-center bg-white dark:bg-navy rounded-xl p-3 lg:p-5'
     >

@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Answer from "../Answer";
-import errorIcon from "/images/icon-error.svg";
+
+const errorIcon = "/images/icon-error.svg";
 
 export default function Quiz() {
   const location = useLocation();
@@ -11,20 +12,20 @@ export default function Quiz() {
   const [correct, setCorrect] = useState<number>();
   const [wrong, setWrong] = useState<number>();
   const [error, setError] = useState<boolean>(false);
-  const [submited, setSubmited] = useState<boolean>(false);
+  const [submitted, setSubmitted] = useState<boolean>(false);
   const score = useRef<number>(0);
   const letters = ["A", "B", "C", "D"];
   const questions = data[question].options.map((el: string, i: number) => (
     <Answer
       letter={letters[i]}
-      question={el}
+      answer={el}
       key={i}
       index={i}
       select={setSelected}
       selected={selected}
       correct={correct}
       wrong={wrong}
-      submited={submited}
+      submitted={submitted}
     />
   ));
 
@@ -33,12 +34,12 @@ export default function Quiz() {
   }, [selected]);
 
   const nextQuestion = () => {
-    if (question + 1 === data.length) moveToResult();
+    if (question + 1 === data.length) return moveToResult();
     setQuestion((prev) => prev + 1);
     setSelected(5);
     setCorrect(undefined);
     setWrong(undefined);
-    setSubmited(false);
+    setSubmitted(false);
   };
 
   const validate = () => {
@@ -48,13 +49,13 @@ export default function Quiz() {
     setCorrect(data[question].options.indexOf(correctAnswer));
     if (selectedAnswer === correctAnswer) score.current += 1;
     setWrong(
-      selectedAnswer === correctAnswer ? undefined : data[question].options.indexOf(selectedAnswer)
+      selectedAnswer === correctAnswer ? undefined : data[question].options.indexOf(selectedAnswer),
     );
-    setSubmited(true);
+    setSubmitted(true);
   };
 
   const submitAnswer = () => {
-    if (selected == undefined || selected < 0) return;
+    if (selected === undefined || selected < 0) return;
     validate();
   };
 
@@ -95,24 +96,26 @@ export default function Quiz() {
         <div className='flex flex-col w-full'>
           <button
             className='h-14 md:h-[5.75rem] flex items-center justify-center text-white text-[1.125rem] font-medium bg-purple rounded-xl md:rounded-3xl headingS'
-            onClick={submited ? nextQuestion : submitAnswer}
+            onClick={submitted ? nextQuestion : submitAnswer}
           >
-            {submited
+            {submitted
               ? question + 1 === data.length
                 ? "Finish Quiz"
                 : "Next Question"
               : "Submit Answer"}
           </button>
-          <div
-            className={`flex flex-row items-center justify-center text-red dark:text-white mt-3 md:mt-8 ${
-              error ? "" : "hidden"
-            }`}
-          >
-            <div className='w-10 h-10 flex items-center justify-center'>
-              <img src={errorIcon} className='w-[1.875rem] h-[1.875rem]'></img>
+          {error ? (
+            <div
+              className={`flex flex-row items-center justify-center text-red dark:text-white mt-3 md:mt-8`}
+            >
+              <div className='w-10 h-10 flex items-center justify-center'>
+                <img src={errorIcon} className='w-[1.875rem] h-[1.875rem]' alt='' />
+              </div>
+              <p className='text-[1.125rem] leading-[100%] bodyM '>Please select an answer</p>
             </div>
-            <p className='text-[1.125rem] leading-[100%] bodyM '>Please select an answer</p>
-          </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

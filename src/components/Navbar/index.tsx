@@ -16,7 +16,7 @@ export default function Navbar({ category, color, icon }: setThemeType) {
             icon.length > 0 ? "" : "hidden"
           }`}
         >
-          <img className='w-7 md:w-9' src={icon} />
+          <img className='w-7 md:w-9' src={icon} alt='' />
         </div>
         <p className='font-medium text-[1.125rem] leading-[100%] headingS'>{category}</p>
       </div>
